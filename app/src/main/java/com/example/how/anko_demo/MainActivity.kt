@@ -2,11 +2,27 @@ package com.example.how.anko_demo
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import org.jetbrains.anko.*
+import org.jetbrains.anko.sdk27.coroutines.onClick
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        verticalLayout {
+            padding = dip(30)
+            editText {
+                hint = "Name"
+                textSize = 24f
+            }
+            editText("lala") {
+                hint = "Password"
+                textSize = 24f
+            }.topPadding=dip(10)
+            button("Login") {
+                textSize = 26f
+                onClick  { startActivity<AnkoComponentActivity>("id" to 5)}
+            }
+        }
     }
 }
