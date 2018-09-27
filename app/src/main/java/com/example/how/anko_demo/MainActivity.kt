@@ -8,6 +8,7 @@ import org.jetbrains.anko.sdk27.coroutines.onClick
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val name= "How"
         super.onCreate(savedInstanceState)
         verticalLayout {
             padding = dip(30)
@@ -15,13 +16,13 @@ class MainActivity : AppCompatActivity() {
                 hint = "Name"
                 textSize = 24f
             }
-            editText("lala") {
+            editText(name) {
                 hint = "Password"
                 textSize = 24f
             }.topPadding=dip(10)
             button("Login") {
                 textSize = 26f
-                onClick  { startActivity<AnkoComponentActivity>("id" to 5)}
+                onClick  { startActivity<LayoutParamsActivity>("id" to 5)}
             }
         }
     }

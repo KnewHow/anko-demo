@@ -12,11 +12,11 @@ class AnkoComponentActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        AnkoComponentUI().setContentView(this)
+        LoginBoxUI().setContentView(this)
     }
 }
 
-class AnkoComponentUI :AnkoComponent<AnkoComponentActivity> {
+class LoginBoxUI :AnkoComponent<AnkoComponentActivity> {
     private  val customStyle = { v: Any ->
         when(v) {
             is Button -> v.textSize  = 26f
@@ -28,10 +28,10 @@ class AnkoComponentUI :AnkoComponent<AnkoComponentActivity> {
         verticalLayout{
             padding = dip(32)
             val name = editText{
-                hint="UserName"
+                hint="LogInBoxComponent"
             }
             val password = editText(InputConstraints.PASSWORD) {
-                hint="Password"
+                hint="LogInBoxComponent"
             }
             button("Login In") {
                 onClick {
